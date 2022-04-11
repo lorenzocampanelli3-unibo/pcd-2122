@@ -7,6 +7,14 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
 
 dependencies {
 
