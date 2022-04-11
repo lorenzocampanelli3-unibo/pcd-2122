@@ -49,11 +49,12 @@ class MyView extends JFrame implements ActionListener, ModelObserver {
 		});
 	}
 	
-	public void show() {
+	public void display() {
 		SwingUtilities.invokeLater(() -> {
 			setVisible(true);
 		});
 	}
+
 	public void actionPerformed(ActionEvent ev) {
 		try {
 			controller.processEvent(ev.getActionCommand());
@@ -70,15 +71,17 @@ class MyView extends JFrame implements ActionListener, ModelObserver {
 			// state.setText("state: " + model.getState());
 			
 			/* ok */
-			/*
+			
 			SwingUtilities.invokeLater(() -> {
 				state.setText("state: " + model.getState());
-			});*/
+			});
 			
 			/* deadlock */
+			/*
 			SwingUtilities.invokeAndWait(() -> {
 				state.setText("state: " + model.getState());
-			});			
+			});
+			*/			
 		} catch (Exception ex){
 			ex.printStackTrace();
 		}
