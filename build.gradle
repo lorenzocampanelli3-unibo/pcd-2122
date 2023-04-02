@@ -4,12 +4,20 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 def versions = [
   ScalaBinary: "2.13"
 ]
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
 
 dependencies {
 
@@ -38,7 +46,12 @@ dependencies {
 	/* for logging */
 	implementation 'org.slf4j:slf4j-api:1.7.25'
 	implementation 'org.slf4j:slf4j-jdk14:1.7.36'
-	
-	
+
+    implementation files('JPF/jpf-core/build/jpf-classes.jar')
+
+    implementation 'org.apache.pdfbox:pdfbox:2.0.27'
+
+
+
 
 }
